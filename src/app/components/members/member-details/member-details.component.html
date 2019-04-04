@@ -1,0 +1,51 @@
+<section class="new-work-order">
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <h2 class="title">Member Details</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 b-right-2">ID</div>
+        <div class="col-md-6">{{member.Id}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 b-right-2">Name</div>
+        <div class="col-md-6">{{member.Name}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 b-right-2">Mobile No</div>
+        <div class="col-md-6">{{member.MobileNo}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 b-right-2">Address</div>
+        <div class="col-md-6">{{member.Address}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 b-right-2">Reference Number</div>
+        <div class="col-md-6">{{member.ReferenceNumber}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 b-right-2">Reference Point</div>
+        <div class="col-md-6">{{member.ReferencePoint}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 b-right-2">Buy Point</div>
+        <div class="col-md-6">{{member.BuyPoint}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 b-right-2">Total Point</div>
+        <div class="col-md-6">{{member.TotalPoint}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 b-right-2">Date Created</div>
+        <div class="col-md-6">{{member.Date | date}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 b-right-2">
+          <button mat-raised-button type="submit" color="primary" (click)="withDraw()">Withdraw</button>
+        </div>
+        <div class="col-md-6">
+          <button mat-raised-button type="submit" color="accent" (click)="withDrawBonus()" [disabled]="member.TotalPoint<10000">Withdraw Bonus</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,61 @@
+<section class="project-workers">
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <h2 class="title">Members</h2>
+    <div>
+      <div class="flex">
+        <div class="padding-top">
+          <button type="button" mat-raised-button color="primary" (click)="Navigate()">Add New Member</button>
+        </div>
+        <mat-form-field>
+          <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Search..">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div fxLayout="row">
+      <div class="form-padding" fxLayout="column" class="table-width">
+        <mat-table [dataSource]="dataSource" matSort>
+          <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.Id}}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.Name}}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="mobile-no">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Mobile No</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.MobileNo}}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="address">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Address</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.Address}}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="point">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Point</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.Point}}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="reference-number">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Reference Number</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.ReferenceNumber}}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="action" cdkColumnDef="action">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Action</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <button mat-raised-button type="button" color="primary" class="m-right-10" (click)="onEditMember(element.Id)">Edit</button>
+              <button mat-raised-button type="button" color="accent" class="m-right-10" (click)="onDetailsMember(element.Id)">Details</button>
+            </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+        </mat-table>
+      </div>
+    </div>
+    <mat-paginator
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20]"
+      [showFirstLastButtons]="true">
+    </mat-paginator>
+  </div>
+</section>

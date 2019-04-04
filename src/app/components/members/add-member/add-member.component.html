@@ -1,0 +1,28 @@
+<section class="new-work-order">
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <h2 class="title">Add New Member</h2>
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
+
+      <div fxLayout="row">
+        <div class="form-padding" fxLayout="column">
+          <mat-form-field>
+            <input type="text" matInput class="form-input" placeholder="Name" name="name" [(ngModel)]="member.Name" required/>
+          </mat-form-field>
+          <mat-form-field>
+            <input type="text" matInput class="form-input" placeholder="Mobile No." name="mobile-no" [(ngModel)]="member.MobileNo" required/>
+          </mat-form-field>
+          <mat-form-field>
+            <input type="text" matInput class="form-input" placeholder="Address" name="address" [(ngModel)]="member.Address"/>
+          </mat-form-field>
+          <mat-form-field>
+            <input type="text" matInput class="form-input" placeholder="Reference Number" name="reference-number" [(ngModel)]="member.ReferenceNumber" required/>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-padding">
+        <button type="submit" mat-raised-button color="primary" [disabled]="!f.form.valid">Save</button>
+      </div>
+    </form><!-- end form -->
+  </div>
+</section>

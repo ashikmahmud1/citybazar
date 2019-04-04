@@ -1,0 +1,45 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="wrapper">
+  <!-- Sidebar Holder -->
+  <nav id="sidebar" *ngIf="isAuth">
+    <div class="sidebar-header">
+      <h3>City Bazar</h3>
+    </div>
+
+    <ul class="list-unstyled components">
+      <li><a routerLink="/members" routerLinkActive="active">Members</a></li>
+      <li><a routerLink="/add-member" routerLinkActive="active">Add Member</a></li>
+      <li><a routerLink="/add-point" routerLinkActive="active">Add Point</a></li>
+      <li><a routerLink="/transactions" routerLinkActive="active">Report</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Content Holder -->
+  <div id="content">
+
+    <nav class="navbar navbar-default" *ngIf="isAuth">
+      <div class="container-fluid">
+
+        <div class="navbar-header">
+          <button type="button" id="sidebarCollapse" class="navbar-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a routerLink="/members" class="article m-right-3 rounded">Members</a></li>
+            <li><a routerLink="/add-member" class="article m-right-3 rounded">Add Member</a></li>
+            <li><a routerLink="/add-point" class="article m-right-3 rounded">Add Point</a></li>
+            <li><a routerLink="/transactions" class="article m-right-3 rounded">Report</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="line"></div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

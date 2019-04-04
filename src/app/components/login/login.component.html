@@ -1,0 +1,24 @@
+<section class="new-work-order">
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <img src="assets/img/logo.jpg" width="50%">
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
+
+      <div fxLayout="row">
+        <div class="form-padding" fxLayout="column">
+          <mat-form-field>
+            <input type="text" matInput class="form-input" placeholder="Your email" name="email" [(ngModel)]="user.email" required/>
+          </mat-form-field>
+          <mat-form-field>
+            <input type="password" matInput class="form-input" placeholder="Your password" name="password" [(ngModel)]="user.password" required/>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-padding">
+        <div class="text-center">
+          <button type="submit" mat-raised-button color="primary" [disabled]="!f.form.valid">Submit</button>
+        </div>
+      </div>
+    </form><!-- end form -->
+  </div>
+</section>
